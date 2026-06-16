@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where to Find Help · CalcBridge</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:   #0D5C73;
+  --teal2:  #1B7A96;
+  --teal3:  #0a3f52;
+  --orange: #D4622A;
+  --gold:   #E8A020;
+  --yellow: #FFD166;
+  --bg:     #F4F7F9;
+  --text:   #1A2A33;
+  --muted:  #5A7080;
+  --white:  #ffffff;
+  --green:  #1a6b4a;
+  --amber:  #92400e;
+  --red:    #b91c1c;
+  --border: #D0DDE5;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; min-height: 100vh; font-size: 16px; }
+
+/* ── HEADER ── */
+.header {
+  background: var(--teal3); color: white;
+  padding: 28px 24px 22px; text-align: center;
+}
+.header-eyebrow {
+  font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--yellow); opacity: .85; margin-bottom: 8px;
+}
+.header-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(24px, 5vw, 32px); color: white; margin-bottom: 8px;
+}
+.header-sub {
+  font-size: clamp(14px, 2.5vw, 16px); color: rgba(255,255,255,.7);
+  font-weight: 300; max-width: 480px; margin: 0 auto; line-height: 1.6;
+}
+
+/* ── TABS ── */
+.tab-row {
+  display: flex; background: var(--teal3);
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.tab-btn {
+  flex: 1; padding: 14px 6px; border: none;
+  background: transparent; color: rgba(255,255,255,.5);
+  font-family: 'DM Sans', sans-serif; font-size: clamp(13px, 2vw, 15px);
+  font-weight: 700; cursor: pointer; letter-spacing: .5px;
+  border-bottom: 4px solid transparent;
+  transition: all .15s; line-height: 1.3;
+}
+.tab-btn:hover { color: rgba(255,255,255,.85); }
+.tab-btn.active {
+  color: white;
+  border-bottom-color: var(--orange);
+  background: rgba(255,255,255,.08);
+}
+.tab-sub { font-weight: 400; font-size: clamp(11px, 1.8vw, 13px); opacity: .75; display: block; margin-top: 2px; }
+
+/* ── MAIN ── */
+.main { padding: 20px 18px; max-width: 680px; margin: 0 auto; }
+
+/* ── PROBLEM GRID ── */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  gap: 10px; margin-bottom: 20px;
+}
+.prob-btn {
+  background: white; border: 2px solid var(--border);
+  border-radius: 12px; padding: 14px 6px;
+  text-align: center; cursor: pointer;
+  transition: all .15s; font-family: 'DM Sans', sans-serif;
+}
+.prob-btn:hover { border-color: var(--teal2); background: #ebf4f8; }
+.prob-btn.active { border-color: var(--teal2); background: var(--teal3); color: white; }
+.prob-num {
+  font-size: clamp(20px, 3.5vw, 24px); font-weight: 700;
+  color: var(--teal3); display: block; line-height: 1;
+}
+.prob-btn.active .prob-num { color: white; }
+.prob-skill {
+  font-size: clamp(11px, 1.8vw, 12px); color: var(--muted);
+  margin-top: 4px; line-height: 1.3;
+}
+.prob-btn.active .prob-skill { color: rgba(255,255,255,.75); }
+
+/* ── RESULT CARD ── */
+.result-card {
+  background: white; border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden; display: none;
+}
+.result-card.show { display: block; }
+.result-header {
+  background: var(--teal3); padding: 20px 22px 18px;
+}
+.result-tag {
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--yellow); opacity: .85;
+  margin-bottom: 6px;
+}
+.result-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(20px, 3.5vw, 26px); color: white; line-height: 1.25;
+}
+.result-body { padding: 20px 22px; display: flex; flex-direction: column; gap: 16px; }
+
+.resource-row {
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.resource-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; flex-shrink: 0; margin-top: 2px;
+}
+.icon-ff  { background: #e0f0f8; }
+.icon-cbc { background: #e8f5ef; }
+.icon-app { background: #fff3e0; }
+.icon-gap { background: #fef2f2; }
+.resource-content { flex: 1; }
+.resource-label {
+  font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--muted);
+  margin-bottom: 4px;
+}
+.resource-text { font-size: clamp(14px, 2.2vw, 16px); color: var(--text); line-height: 1.6; }
+.resource-text strong { color: var(--teal3); }
+.resource-text.gap { color: var(--red); }
+.resource-text.partial { color: var(--amber); }
+.resource-link {
+  display: inline-block; margin-top: 10px;
+  background: var(--orange); color: white;
+  font-size: clamp(13px, 2vw, 15px); font-weight: 700; padding: 8px 18px;
+  border-radius: 8px; text-decoration: none;
+}
+.resource-link:hover { background: #b8501f; }
+
+/* ── COVERAGE PILL ── */
+.cov-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 5px 13px; border-radius: 14px;
+  font-size: clamp(12px, 2vw, 14px); font-weight: 700; margin-top: 2px;
+}
+.cov-full { background: #e8f5ef; color: var(--green); }
+.cov-part { background: #fffbeb; color: var(--amber); }
+.cov-gap  { background: #fef2f2; color: var(--red); }
+
+/* ── INTEGRAL BADGE ── */
+.int-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--teal3); color: var(--yellow);
+  font-size: clamp(12px, 2vw, 14px); font-weight: 700; padding: 5px 13px;
+  border-radius: 14px;
+}
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* ── PLACEHOLDER ── */
+.placeholder {
+  text-align: center; padding: 40px 20px;
+  color: var(--muted); font-size: clamp(15px, 2.5vw, 17px);
+}
+.placeholder-icon { font-size: 40px; margin-bottom: 12px; }
+.placeholder-text { font-style: italic; line-height: 1.6; }
+
+@media (max-width: 520px) {
+  .problem-grid { grid-template-columns: repeat(auto-fill, minmax(75px, 1fr)); gap: 8px; }
+  .main { padding: 16px 14px; }
+  .result-header { padding: 16px 18px 14px; }
+  .result-body { padding: 16px 18px; gap: 14px; }
+}
+
+/* ── AI PROMPTS SECTION ── */
+.ai-section {
+  border: 2px solid #c7e0ea;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.ai-toggle {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  background: #e8f4f9; border: none; padding: 14px 18px;
+  font-family: 'DM Sans', sans-serif; font-size: clamp(14px, 2.2vw, 15px);
+  font-weight: 700; color: var(--teal3); cursor: pointer; text-align: left;
+  transition: background .15s;
+}
+.ai-toggle:hover { background: #d5eaf4; }
+.ai-toggle-icon { font-size: 18px; transition: transform .2s; flex-shrink: 0; }
+.ai-toggle.open .ai-toggle-icon { transform: rotate(180deg); }
+.ai-body { padding: 0 18px 18px; display: none; }
+.ai-body.open { display: block; }
+.ai-intro {
+  font-size: clamp(13px, 2vw, 14px); color: var(--muted);
+  line-height: 1.55; padding: 12px 0 14px; border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+.prompt-block { margin-bottom: 12px; }
+.prompt-type {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 8px; margin-bottom: 7px;
+}
+.type-explain { background: #e0f0f8; color: #0a3f52; }
+.type-explore { background: #e8f5ef; color: #1a6b4a; }
+.type-practice { background: #fff3e0; color: #92400e; }
+.prompt-row {
+  display: flex; gap: 10px; align-items: flex-start;
+  background: #f8fafc; border: 1px solid var(--border);
+  border-radius: 10px; padding: 12px 14px;
+}
+.prompt-text {
+  flex: 1; font-size: clamp(13px, 2vw, 14px); color: var(--text);
+  line-height: 1.6; font-style: italic;
+}
+.copy-btn {
+  flex-shrink: 0; background: var(--teal3); color: white;
+  border: none; border-radius: 7px; padding: 5px 11px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700;
+  cursor: pointer; white-space: nowrap; transition: background .15s; margin-top: 2px;
+}
+.copy-btn:hover { background: var(--teal2); }
+.copy-btn.copied { background: var(--green); }
+.followup-card {
+  background: var(--teal3); border-radius: 10px; padding: 14px 16px; margin-top: 14px;
+}
+.followup-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--yellow); margin-bottom: 8px;
+}
+.followup-list {
+  list-style: none; display: flex; flex-direction: column; gap: 6px;
+}
+.followup-list li {
+  font-size: clamp(13px, 2vw, 14px); color: rgba(255,255,255,.85); line-height: 1.4;
+}
+.followup-list li::before { content: '→ '; color: var(--yellow); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-eyebrow">CalcBridge Math Academy</div>
+  <h1 class="header-title">Where Can I Find Help?</h1>
+  <p class="header-sub">Pick the diagnostic test and the problem you want to review — we'll show you exactly where to go in the course.</p>
+</div>
+
+<div class="tab-row">
+  <button class="tab-btn active" onclick="selectTest('A',this)">Test A<br><span class="tab-sub">Algebra</span></button>
+  <button class="tab-btn" onclick="selectTest('B',this)">Test B<br><span class="tab-sub">Analytic Geo.</span></button>
+  <button class="tab-btn" onclick="selectTest('C',this)">Test C<br><span class="tab-sub">Functions</span></button>
+  <button class="tab-btn" onclick="selectTest('D',this)">Test D<br><span class="tab-sub">Trigonometry</span></button>
+</div>
+
+<div class="main">
+  <div class="problem-grid" id="problemGrid"></div>
+  <div class="result-card" id="resultCard">
+    <div class="result-header">
+      <div class="result-tag" id="rTag"></div>
+      <div class="result-title" id="rTitle"></div>
+    </div>
+    <div class="result-body" id="rBody"></div>
+  </div>
+  <div class="placeholder" id="placeholder">
+    <div class="placeholder-icon">👆</div>
+    <div class="placeholder-text">Select a problem number above to see where to find help.</div>
+  </div>
+</div>
+
+<script>
+const DATA = {
+  A: [
+    {
+      skill: 'Exponents',
+      short: 'Evaluate',
+      cov: 'full',
+      ff: '<strong>Unit G — Polynomials</strong><br>G.2 Properties of Exponents<br>G.2b Negative Exponent Definition',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Simplify expressions',
+      short: 'Simplify',
+      cov: 'full',
+      ff: '<strong>Unit G — Polynomials</strong><br>G.2a Simplify with Exponent Properties<br>G.2b Use the Definition of a Negative Exponent',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Expand and simplify',
+      short: 'Expand',
+      cov: 'full',
+      ff: '<strong>Unit G — Polynomials</strong><br>G.3c Multiply Binomials (FOIL)<br>G.3d Multiply a Polynomial by a Polynomial<br>G.3e Special Products',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Factor expressions',
+      short: 'Factor',
+      cov: 'full',
+      ff: '<strong>Unit H — Factoring</strong><br>H.1 GCF and Factoring by Grouping<br>H.2 Factor Trinomials<br>H.3 Factor Special Products<br>H.4 General Factoring Strategy',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Rational expressions',
+      short: 'Rational Exp.',
+      cov: 'full',
+      ff: '<strong>Unit I — Rational Expressions</strong><br>I.1 Multiply and Divide<br>I.2 Add and Subtract<br>I.3 Simplify Complex Fractions',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Rationalize',
+      short: 'Rationalize',
+      cov: 'full',
+      ff: '<strong>Unit J — Roots and Radicals</strong><br>J.5b Rationalize a One-Term Denominator<br>J.5c Rationalize a Two-Term Denominator',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Complete the square',
+      short: 'Complete Sq.',
+      cov: 'full',
+      ff: '<strong>Unit F — Quadratic Equations</strong><br>F.2a Complete the Square of a Binomial<br>F.2b Solve with Leading Coeff. = 1<br>F.2c Solve with Any Leading Coeff.',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Solve equations',
+      short: 'Solve Eqns.',
+      cov: 'full',
+      ff: '<strong>Multiple units — choose by type:</strong><br>Linear → Unit B<br>Quadratic → Unit F (F.3 Quadratic Formula)<br>Rational → I.4 Solve Rational Equations<br>Radical → J.6 Solve Radical Equations<br>Polynomial → H.5 Polynomial Equations',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Solve inequalities',
+      short: 'Inequalities',
+      cov: 'full',
+      ff: '<strong>Multiple units — choose by type:</strong><br>Linear → B.7 Solve Linear Inequalities<br>Absolute Value → B.9 Absolute Value Inequalities<br>Rational → I.6 Rational Inequalities<br>Quadratic → F.7 Quadratic Inequalities',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'True or False? Algebraic claims',
+      short: 'True/False',
+      cov: 'full',
+      ff: '<strong>CalcBridge Interactive App</strong><br>True or False? Algebraic Verification Practice',
+      cbc: null,
+      app: { label: 'Open the app', href: 'https://saccalcbridgeverifier.netlify.app/' },
+      sym: true,
+    },
+  ],
+  B: [
+    {
+      skill: 'Find equations of lines',
+      short: 'Line Eqns.',
+      cov: 'full',
+      ff: '<strong>Unit D — Linear Graphs</strong><br>D.6a Line from Slope + y-intercept<br>D.6b Line from Slope + a Point<br>D.6c Line from Two Points<br>D.6d–e Parallel and Perpendicular Lines',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Equation of a circle',
+      short: 'Circle Eqns.',
+      cov: 'full',
+      ff: '<strong>Unit C — Linear Math Models</strong><br>Distance, Midpoint, and Circles section',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Circle center and radius',
+      short: 'Circle Props.',
+      cov: 'full',
+      ff: '<strong>Unit C — Linear Math Models</strong><br>Distance, Midpoint, and Circles section<br>(Pairs with Unit F · F.2 Completing the Square)',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Distance and midpoint',
+      short: 'Dist. & Mid.',
+      cov: 'full',
+      ff: '<strong>Unit C — Linear Math Models</strong><br>C.4b Use the Pythagorean Theorem<br>C: Distance, Midpoint, and Circles',
+      cbc: null,
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Sketch geometric regions',
+      short: 'Regions',
+      cov: 'part',
+      ff: '<strong>Unit D — Linear Graphs</strong> (partial)<br>D.7 Graphs of Linear Inequalities<br><em>Note: covers linear boundaries only</em>',
+      cbc: null,
+      app: null,
+      sym: false,
+      prompts: {
+        explain: "I'm studying linear inequalities in two variables. Can you explain: what is a linear inequality in two variables, what does its solution look like as a graph, and what's the difference between a dashed and a solid boundary line?",
+        explore: "I graphed the line 2x + y = 4. But when I change the = to ≤, why does the solution become an entire region instead of just a line?",
+        practice: "I have the inequality y > 2x − 3 and I need to graph its solution region. Can you be my tutor? Don't give me the answer — coach me one step at a time. Start by asking me what I'd do first.",
+        followup: ["Can you say that differently?", "Give me a second example.", "Is my shading correct if I shade above the line?", "What changes if the inequality is ≥ instead of >?"]
+      },
+    },
+  ],
+  C: [
+    {
+      skill: 'Read and interpret a graph',
+      short: 'Read Graphs',
+      cov: 'full',
+      ff: '<strong>Unit D</strong> — D.2 Graph Linear Equations<br><strong>Unit F</strong> — F.5 Graph Quadratic Functions',
+      cbc: '<strong>OpenStax 1.1</strong> — Review of Functions',
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Evaluate the difference quotient',
+      short: 'Diff. Quotient',
+      cov: 'full',
+      ff: null,
+      cbc: '<strong>OpenStax 1.1</strong> — Review of Functions<br><strong>CBC #1</strong> — Rates of Change and the Difference Quotient',
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Find the domain of a function',
+      short: 'Domain',
+      cov: 'full',
+      ff: '<strong>Unit J</strong> — J.7b Domain of a Radical Function',
+      cbc: '<strong>OpenStax 1.1</strong> — Review of Functions',
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Describe graph transformations',
+      short: 'Transformations',
+      cov: 'full',
+      ff: '<strong>Unit F</strong> — F.6a–d Graph Quadratic Functions Using Transformations',
+      cbc: '<strong>OpenStax 1.2</strong> — Basic Classes of Functions',
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Sketch a graph without a calculator',
+      short: 'Sketch Graphs',
+      cov: 'full',
+      ff: '<strong>Unit D</strong> — D.2–D.5 Linear Graphs<br><strong>Unit F</strong> — F.5 Graph Quadratics Using Properties',
+      cbc: '<strong>OpenStax 1.2</strong> — Basic Classes of Functions',
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Evaluate a piecewise function',
+      short: 'Piecewise',
+      cov: 'full',
+      ff: null,
+      cbc: '<strong>OpenStax 1.1</strong> — Review of Functions',
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Compute function compositions',
+      short: 'Composition',
+      cov: 'full',
+      ff: null,
+      cbc: '<strong>OpenStax 1.1</strong> — Review of Functions<br><strong>OpenStax 1.4</strong> — Inverse Functions',
+      app: null,
+      sym: true,
+    },
+  ],
+  D: [
+    {
+      skill: 'Convert degrees to radians',
+      short: 'Deg → Rad',
+      cov: 'full',
+      ff: null,
+      cbc: '<strong>OpenStax 1.3</strong> — Trigonometric Functions',
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Convert radians to degrees',
+      short: 'Rad → Deg',
+      cov: 'full',
+      ff: null,
+      cbc: '<strong>OpenStax 1.3</strong> — Trigonometric Functions',
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Find arc length (s = rθ)',
+      short: 'Arc Length',
+      cov: 'part',
+      ff: null,
+      cbc: '<strong>OpenStax 1.3</strong> — Trigonometric Functions<br><em>Tip: s = rθ requires θ in radians.</em>',
+      app: null,
+      sym: true,
+      prompts: {
+        explain: "Can you explain the arc length formula s = rθ? What does each variable represent, why does θ need to be in radians, and can you walk me through one example from start to finish?",
+        explore: "I know that s = rθ gives arc length, but I want to understand why multiplying the radius by the angle in radians gives arc length. Where does this formula actually come from?",
+        practice: "I'm trying to find arc length when the radius is 6 cm and the central angle is 120°. Can you tutor me through it? Start by asking me what I need to do before I plug anything into the formula.",
+        followup: ["Can you rephrase that?", "What happens if the angle is given in degrees instead of radians?", "Can you check my setup: s = 6 · 120?", "What if I'm given the arc length and need to find the angle?"]
+      },
+    },
+    {
+      skill: 'Evaluate exact trig values',
+      short: 'Exact Values',
+      cov: 'full',
+      ff: null,
+      cbc: '<strong>OpenStax 1.3</strong> — Trigonometric Functions',
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Right triangle trigonometry',
+      short: 'Right Triangle',
+      cov: 'full',
+      ff: null,
+      cbc: '<strong>OpenStax 1.3</strong> — Trigonometric Functions',
+      app: null,
+      sym: true,
+    },
+    {
+      skill: 'Apply sum and difference identities',
+      short: 'Sum/Diff ID',
+      cov: 'part',
+      ff: null,
+      cbc: '<strong>OpenStax 1.3</strong> — Trigonometric Functions<br><em>Identity: sin(x±y) = sinx cosy ± cosx siny</em>',
+      app: null,
+      sym: true,
+      prompts: {
+        explain: "Can you explain the sum and difference identities for sine and cosine? Walk me through how to use one of them to find the exact value of sin(75°).",
+        explore: "I keep wanting to write sin(A + B) = sin A + sin B, but I know that's wrong. Can you help me understand why that's not true and what the actual formula is?",
+        practice: "I need to find the exact value of cos(15°) using a sum or difference identity. Can you coach me through it? Ask me what two angles I might use, then guide me from there.",
+        followup: ["Can you say that a different way?", "What's another angle I could find using these identities?", "Can you check my work: cos(15°) = cos(45° − 30°) = cos45° · cos30° − sin45° · sin30°?", "How can I use these identities to simplify expressions, not just find values?"]
+      },
+    },
+    {
+      skill: 'Prove a trig identity',
+      short: 'Prove Identity',
+      cov: 'gap',
+      ff: null,
+      cbc: null,
+      app: { label: 'Open Trig Identity Practice', href: 'https://saccalcbridgetrigidentities.netlify.app/' },
+      sym: false,
+      gap: true,
+      prompts: {
+        explain: "Can you explain what it means to prove a trigonometric identity? Why am I only allowed to work on one side at a time? Walk me through an example proof and name what you're doing at each step.",
+        explore: "When proving a trig identity, I can only manipulate one side — but why? What's the logical difference between an identity and an equation I'm trying to solve?",
+        practice: "I need to prove that sin(θ)/tan(θ) = cos(θ), working on the left side only. Can you be my tutor? Don't prove it for me — guide me one step at a time and ask me to name each identity I use.",
+        followup: ["Can you explain that step differently?", "Give me a different identity to try.", "Here's my work — can you tell me if my reasoning is correct?", "What should I do if I get stuck in the middle of a proof?"]
+      },
+    },
+    {
+      skill: 'Solve a trig equation',
+      short: 'Solve Trig Eqn',
+      cov: 'part',
+      ff: null,
+      cbc: '<strong>OpenStax 1.3</strong> — Trigonometric Functions',
+      app: { label: 'Open Trig Equations Practice', href: 'https://saccalcbridgetrigequations.netlify.app/' },
+      sym: true,
+      prompts: {
+        explain: "Can you explain how to solve 2cos(x) = √3 on the interval [0, 2π)? Walk me through each step: isolate the trig function, find the reference angle, identify the correct quadrants, and write the solutions.",
+        explore: "When I solve 2x = 4, I get exactly one answer. But when I solve 2cos(x) = 1, there are multiple solutions. Why do trig equations produce multiple solutions?",
+        practice: "I need to solve √3·tan(x) + 1 = 0 on [0, 2π). Can you coach me without giving me the answer? Ask me what the first step is, then guide me through the reference angle, the correct quadrants, and writing the solutions.",
+        followup: ["Can you say that differently?", "Show me another equation I can practice with.", "Can you check my answers: x = 5π/6 and x = 11π/6?", "How would I write the general solution using + 2πn?"]
+      },
+    },
+    {
+      skill: 'Sketch the graph of a trig function',
+      short: 'Graph Trig',
+      cov: 'full',
+      ff: null,
+      cbc: '<strong>OpenStax 1.3</strong> — Trigonometric Functions',
+      app: null,
+      sym: true,
+    },
+  ],
+};
+
+let currentTest = 'A';
+let currentProb = null;
+
+function selectTest(test, btn) {
+  currentTest = test;
+  currentProb = null;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGrid();
+  hideResult();
+}
+
+function renderGrid() {
+  const grid = document.getElementById('problemGrid');
+  const probs = DATA[currentTest];
+  grid.innerHTML = '';
+  probs.forEach((p, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'prob-btn';
+    btn.id = 'pb-' + i;
+    btn.onclick = () => selectProblem(i);
+    btn.innerHTML = `<span class="prob-num">${i + 1}</span><span class="prob-skill">${p.short}</span>`;
+    grid.appendChild(btn);
+  });
+}
+
+function selectProblem(i) {
+  currentProb = i;
+  document.querySelectorAll('.prob-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('pb-' + i).classList.add('active');
+  showResult(DATA[currentTest][i], i);
+}
+
+function hideResult() {
+  document.getElementById('resultCard').classList.remove('show');
+  document.getElementById('placeholder').style.display = 'block';
+}
+
+function covLabel(cov) {
+  if (cov === 'full') return '<span class="cov-pill cov-full">✓ Fully covered in the course</span>';
+  if (cov === 'part') return '<span class="cov-pill cov-part">⚠ Partially covered — see notes below</span>';
+  return '<span class="cov-pill cov-gap">⚠ Coverage gap — additional resource coming</span>';
+}
+
+function showResult(p, i) {
+  const testName = { A: 'Diagnostic A — Algebra', B: 'Diagnostic B — Analytic Geometry', C: 'Diagnostic C — Functions', D: 'Diagnostic D — Trigonometry' };
+  document.getElementById('rTag').textContent = `${testName[currentTest]} · Problem ${i + 1}`;
+  document.getElementById('rTitle').textContent = p.skill;
+
+  let html = '';
+
+  // Coverage pill + integral badge
+  html += `<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">${covLabel(p.cov)}`;
+  if (p.sym) html += `<span class="int-badge">∫ CalcBridge skill</span>`;
+  html += `</div>`;
+
+  // Divider
+  html += `<hr class="divider">`;
+
+  // Section 2 — Foundational Fluency
+  if (p.ff) {
+    html += `<div class="resource-row">
+      <div class="resource-icon icon-ff">📘</div>
+      <div class="resource-content">
+        <div class="resource-label">Section 2 · Foundational Fluency</div>
+        <div class="resource-text">${p.ff}</div>
+      </div>
+    </div>`;
+  }
+
+  // Section 3 — CBC
+  if (p.cbc) {
+    html += `<div class="resource-row">
+      <div class="resource-icon icon-cbc">📗</div>
+      <div class="resource-content">
+        <div class="resource-label">Section 3 · Calculus Before Calculus</div>
+        <div class="resource-text">${p.cbc}</div>
+      </div>
+    </div>`;
+  }
+
+  // Neither section covered
+  if (!p.ff && !p.cbc && !p.gap) {
+    html += `<div class="resource-row">
+      <div class="resource-icon icon-gap">⚠️</div>
+      <div class="resource-content">
+        <div class="resource-label">Coverage note</div>
+        <div class="resource-text gap">This skill is not yet fully addressed in the current course materials. Check back for updates.</div>
+      </div>
+    </div>`;
+  }
+
+  if (p.gap) {
+    html += `<div class="resource-row">
+      <div class="resource-icon icon-gap">⚠️</div>
+      <div class="resource-content">
+        <div class="resource-label">Coverage note</div>
+        <div class="resource-text gap">This skill is not currently covered in either course section. A dedicated practice resource is being developed for CalcBridge.</div>
+      </div>
+    </div>`;
+  }
+
+  // App link
+  if (p.app) {
+    html += `<div class="resource-row">
+      <div class="resource-icon icon-app">⚡</div>
+      <div class="resource-content">
+        <div class="resource-label">Interactive resource</div>
+        <div class="resource-text">
+          ${p.app.href !== '#'
+            ? `<a class="resource-link" href="${p.app.href}">${p.app.label} →</a>`
+            : `<span style="color:var(--muted);font-style:italic">${p.app.label}</span>`
+          }
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // AI prompts section
+  if (p.prompts) {
+    const pr = p.prompts;
+    html += `<hr class="divider">
+    <div class="ai-section">
+      <button class="ai-toggle" onclick="toggleAI(this)" aria-expanded="false">
+        💬 Talk to an AI About This Topic
+        <span class="ai-toggle-icon">▾</span>
+      </button>
+      <div class="ai-body">
+        <p class="ai-intro">Copy any prompt below and paste it into ChatGPT, Claude, Gemini, or any AI chatbot. Each prompt is designed to give you a different kind of support — choose the one that fits where you are right now.</p>
+
+        <div class="prompt-block">
+          <div class="prompt-type type-explain">📖 Explain It</div>
+          <div class="prompt-row">
+            <span class="prompt-text">${pr.explain}</span>
+            <button class="copy-btn" onclick="copyPrompt(this,'explain')">Copy</button>
+          </div>
+        </div>
+
+        <div class="prompt-block">
+          <div class="prompt-type type-explore">🔍 Explore the Concept</div>
+          <div class="prompt-row">
+            <span class="prompt-text">${pr.explore}</span>
+            <button class="copy-btn" onclick="copyPrompt(this,'explore')">Copy</button>
+          </div>
+        </div>
+
+        <div class="prompt-block">
+          <div class="prompt-type type-practice">🎯 Practice with Coaching</div>
+          <div class="prompt-row">
+            <span class="prompt-text">${pr.practice}</span>
+            <button class="copy-btn" onclick="copyPrompt(this,'practice')">Copy</button>
+          </div>
+        </div>
+
+        <div class="followup-card">
+          <div class="followup-label">💬 Follow-up prompts to keep the conversation going</div>
+          <ul class="followup-list">
+            ${pr.followup.map(f => `<li>${f}</li>`).join('')}
+          </ul>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  document.getElementById('rBody').innerHTML = html;
+  document.getElementById('resultCard').classList.add('show');
+  document.getElementById('placeholder').style.display = 'none';
+}
+
+function toggleAI(btn) {
+  const body = btn.nextElementSibling;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+}
+
+function copyPrompt(btn, key) {
+  const text = DATA[currentTest][currentProb].prompts[key];
+  const finish = () => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(finish).catch(() => fallbackCopy(text, finish));
+  } else {
+    fallbackCopy(text, finish);
+  }
+}
+
+function fallbackCopy(text, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch(e) {}
+  document.body.removeChild(ta);
+  if (cb) cb();
+}
+
+// Init
+renderGrid();
+</script>
+</body>
+</html>
